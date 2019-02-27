@@ -1,5 +1,4 @@
 ---
-image: uploads/welcome.png
-body: Message
-title: Welcome
+image: /static/uploads/sea_sunset.jpg
 ---
+Hello world!
