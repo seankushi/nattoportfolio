@@ -1,4 +1,5 @@
 ---
-image: /static/uploads/sea_sunset.jpg
+image: /uploads/sea_sunset.jpg
+title: Welcome
 ---
 Hello world!

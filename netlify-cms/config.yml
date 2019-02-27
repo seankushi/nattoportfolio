@@ -2,7 +2,8 @@ backend:
   name: github
   repo: seankushi/nattoportfolio # Path to your Github repository
   branch: master # Branch to update (master by default)
-
+media_folder: "static/uploads" # Folder where user uploaded files should go
+public_folder: "uploads"
 collections:
   - name: project
     label: Project
