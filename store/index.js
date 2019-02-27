@@ -1,7 +1,13 @@
-import { attributes as main } from '@/content/site/main.md'
+import { attributes as main, html as mainBody } from '@/content/site/main.md'
 import { attributes as meta } from '@/content/site/meta.md'
 import { attributes as theme } from '@/content/site/theme.md'
 
+// const createComponent = innerHTML => ({
+//   functional: true,
+//   render (h, ctx) {
+//     return h({ domProps: { innerHTML } })
+//   }
+// })
 // import api from '@/api'
 
 // const importMarkdown = async (dir) => {
@@ -26,7 +32,7 @@ export const actions = {
     // await dispatch('getProjects', app)
 
     commit('initStore', {
-      main,
+      main: { ...main, body: mainBody },
       meta,
       theme
     })

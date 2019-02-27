@@ -37,9 +37,7 @@
             <base-heading>
               {{ main.title }}
             </base-heading>
-            <base-text>
-              {{ main.body }}
-            </base-text>
+            <article v-html="main.body" />
             <base-btn class="mt-4">
               Learn More!
             </base-btn>
