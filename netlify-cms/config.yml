@@ -31,6 +31,7 @@ collections:
         name: main
         fields:
           - {label: Main Image, name: image, widget: image}
+          - {label: Title, name: title}
           - {label: Welcome content, name: body, widget: markdown}
 
 
