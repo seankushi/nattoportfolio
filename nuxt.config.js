@@ -1,6 +1,6 @@
-const pkg = require('./package')
+import pkg from './package'
 
-module.exports = {
+export default {
   mode: 'universal',
 
   /*
@@ -44,7 +44,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-netlify-cms'
   ],
   /*
   ** Axios module configuration
@@ -60,7 +61,14 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
+      config.node = {
+        fs: 'empty'
+      }
+      config.module.rules.push({
+        test: /\.md$/,
+        loaders: 'frontmatter-markdown-loader'
+      })
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({

@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: seankushi/nattoportfolio # Path to your Github repository
+  branch: master # Branch to update (master by default)
+
+collections:
+  - name: project
+    label: Project
+    folder: content/project
+    create: true
+    fields:
+      - {label: Project name, name: name}
+  - name: site
+    label: Site settings
+    files:
+      - file: content/site/meta.md
+        label: Meta
+        name: meta
+        fields:
+          - {label: Title, name: title}
+          - {label: Description, name: description}
+          - {label: Icon, name: icon, widget: image}
+      - file: content/site/theme.md
+        label: Theme
+        name: theme
+        fields:
+          - {label: Primary, name: primary}
+          - {label: Secondary, name: secondary}
+      - file: content/site/main.md
+        label: Main page
+        name: main
+        fields:
+          - {label: Main Image, name: image, widget: image}
+          - {label: Welcome content, name: body, widget: markdown}
+
+
+
+

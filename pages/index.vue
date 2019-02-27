@@ -9,7 +9,7 @@
         md6
       >
         <v-img
-          :src="require('@/assets/images/welcome.png')"
+          :src="main.image || ''"
           height="100vh"
         />
       </v-flex>
@@ -34,16 +34,11 @@
             xs10
             md6
           >
-            <base-heading>Welcome!</base-heading>
+            <base-heading>
+              {{ main.title }}
+            </base-heading>
             <base-text>
-              Lorem ipsum dolor sit amet, consectetur ad
-              ipiscin elit. Etiam vulputate augue vel felis gra
-              vida porta. Lorem ipsum dolor sit amet, cons
-              ectetur adipiscing elit.<br>
-              Lorem ipsum dolor sit amet, consectetur ad
-              ipiscin elit. Etiam vulputate augue vel felis gra
-              vida porta. Lorem ipsum dolor sit amet, cons
-              ectetur adipiscing elit.
+              {{ main.body }}
             </base-text>
             <base-btn class="mt-4">
               Learn More!
@@ -58,3 +53,19 @@
     </v-layout>
   </section>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  computed: mapState(['main', 'meta']),
+  head () {
+    const {
+      title
+    } = this.meta
+    return {
+      title
+    }
+  }
+}
+</script>
