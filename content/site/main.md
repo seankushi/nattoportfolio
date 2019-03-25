@@ -1,5 +1,5 @@
 ---
-image: /uploads/sea_sunset.jpg
-title: Welcome
+image: /uploads/boombox-kintaro.png
+title: Sean Kushi
 ---
-Hello world!
+Blurb
