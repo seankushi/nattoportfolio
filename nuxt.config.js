@@ -30,7 +30,7 @@ export default {
             console.log('gen', filename)
             return {
               route: `/projects/${filename}`,
-              payload: content
+              payload: { ...content, name: filename, slug: filename }
             }
           })
         })

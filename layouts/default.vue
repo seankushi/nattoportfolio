@@ -4,26 +4,22 @@
     <v-content>
       <nuxt />
     </v-content>
-    <nuxt-link
-      v-for="project in projects"
-      :key="project.slug"
-      :to="`/projects/${project.slug}`"
-      v-text="project.slug"
-    />
-    <core-footer />
+    <core-footer @change="project => active = project" />
   </v-app>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   components: {
     CoreFooter: () => import('@/components/core/Footer'),
     CoreToolbar: () => import('@/components/core/Toolbar'),
     CoreView: () => import('@/components/core/View')
   },
-  computed: mapState(['projects'])
+  data () {
+    return {
+      active: null
+    }
+  }
 }
 </script>
 
@@ -33,6 +29,9 @@ export default {
 }
 .page-enter, .page-leave-to {
   opacity: 0;
+}
+.v-footer {
+  background: none !important;
 }
 .v-md {
   position: relative;

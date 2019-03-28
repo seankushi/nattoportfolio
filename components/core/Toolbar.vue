@@ -3,7 +3,9 @@
     v-scroll="onScroll"
     :color="isTransparent ? 'transparent' : '#FFF'"
     app
+    fixed
     flat
+    style="border-bottom: solid 1px black"
   >
     <nuxt-link
       class="site-title"
@@ -13,6 +15,11 @@
     </nuxt-link>
     <v-spacer />
     <!-- <SocialMedia /> -->
+    <v-btn
+      outline
+      to="/"
+      v-text="'Work'"
+    />
     <v-btn
       outline
       to="/about"
@@ -37,7 +44,7 @@ export default {
 
   methods: {
     onScroll () {
-      this.isTransparent = window.pageYOffset < 200
+      this.isTransparent = window.pageYOffset < 64
     }
   }
 }
