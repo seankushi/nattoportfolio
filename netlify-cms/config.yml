@@ -13,7 +13,7 @@ collections:
     fields:
       - {label: Project name, name: name}
       - {label: Banner, name: banner, widget: image, required: false}
-      - {label: Full case study link, name: full_case_study}
+      - {label: Full case study link, name: full_case_study, required: false}
       - {label: Intro, name: body, widget: markdown}
       - label: "Section"
         name: "section"
