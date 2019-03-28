@@ -9,8 +9,9 @@ collections:
     label: Project
     folder: content/project
     create: true
+    identifier_field: name
     fields:
-      - {label: Project name, name: title}
+      - {label: Project name, name: name}
       - {label: Banner, name: banner, widget: image, required: false}
       - {label: Full case study link, name: full_case_study}
       - {label: Intro, name: body, widget: markdown}
