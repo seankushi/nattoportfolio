@@ -25,6 +25,27 @@ collections:
             name: "column"
             widget: "list"
             field: {label: Content, name: content, widget: markdown}
+  - name: pages
+    label: Pages
+    files:
+      - file: content/pages/about.md
+        label: About
+        name: about
+        fields:
+          - {label: Page name, name: name}
+          - {label: Banner, name: banner, widget: image, required: false}
+          - {label: Full case study link, name: full_case_study}
+          - {label: Intro, name: body, widget: markdown}
+          - label: "Section"
+            name: "section"
+            widget: "list"
+            fields:
+              - {label: Banner, name: banner, widget: image, required: false}
+              - {label: Heading, name: heading}
+              - label: "Column"
+                name: "column"
+                widget: "list"
+                field: {label: Content, name: content, widget: markdown}
   - name: site
     label: Site settings
     files:
@@ -35,6 +56,16 @@ collections:
           - {label: Title, name: title}
           - {label: Description, name: description}
           - {label: Icon, name: icon, widget: image}
+      - file: content/site/nav.md
+        label: Nav
+        name: nav
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "list"
+            fields:
+              - {label: Label, name: label}
+              - {label: slug, name: slug}
       - file: content/site/theme.md
         label: Theme
         name: theme

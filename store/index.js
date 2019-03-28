@@ -1,3 +1,4 @@
+import { readFiles } from '@/api'
 import { attributes as main, html as mainBody } from '@/content/site/main.md'
 import { attributes as meta } from '@/content/site/meta.md'
 import { attributes as theme } from '@/content/site/theme.md'
@@ -8,7 +9,6 @@ import { attributes as theme } from '@/content/site/theme.md'
 //     return h({ domProps: { innerHTML } })
 //   }
 // })
-// import api from '@/api'
 
 // const importMarkdown = async (dir) => {
 //   try {
@@ -30,11 +30,14 @@ import { attributes as theme } from '@/content/site/theme.md'
 export const actions = {
   async nuxtServerInit ({ commit, dispatch }, { app }) {
     // await dispatch('getProjects', app)
-
+    const projectFiles = await readFiles('./content/projects')
+    const projects = projectFiles.map(p => ({ ...p, name: p.filename, slug: p.filename }))
+    console.log('PRJECTS_INIT', projects)
     commit('initStore', {
       main: { ...main, body: mainBody },
       meta,
-      theme
+      theme,
+      projects
     })
   }
   // async getProjects ({ commit }) {
@@ -52,9 +55,10 @@ export const actions = {
 }
 
 export const mutations = {
-  initStore (state, { main, meta, theme }) {
+  initStore (state, { main, meta, theme, projects }) {
     state.main = main
     state.meta = meta
+    state.projects = projects
     state.theme = theme
   },
   setProjects (state, projects) {

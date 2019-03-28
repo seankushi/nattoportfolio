@@ -1,3 +1,4 @@
+import { readFiles } from './api'
 import pkg from './package'
 
 export default {
@@ -18,6 +19,37 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
+
+  generate: {
+    fallback: true,
+    routes: function () {
+      return readFiles('./content/projects')
+        .then(files => {
+          console.log('files', files)
+          return files.map(({ content, filename }) => {
+            console.log('gen', filename)
+            return {
+              route: `/projects/${filename}`,
+              payload: content
+            }
+          })
+        })
+        .catch(error => console.error(error))
+    }
+  },
+
+  // hooks: {
+  //   build: {
+  //     async before (builder) {
+  //       try {
+  //         files = await readFiles('./content/projects')
+  //         console.log('FILES', files)
+  //       } catch (error) {
+  //         console.error('before', error)
+  //       }
+  //     }
+  //   }
+  // },
 
   /*
   ** Customize the progress-bar color
