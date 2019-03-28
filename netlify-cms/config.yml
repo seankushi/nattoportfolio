@@ -15,16 +15,16 @@ collections:
       - {label: Banner, name: banner, widget: image, required: false}
       - {label: Full case study link, name: full_case_study}
       - {label: Intro, name: body, widget: markdown}
-      - label: "Sections"
-        name: "sections"
+      - label: "Section"
+        name: "section"
         widget: "list"
         fields:
           - {label: Banner, name: banner, widget: image, required: false}
           - {label: Heading, name: heading}
-          - label: "Sections"
-            name: "sections"
+          - label: "Column"
+            name: "column"
             widget: "list"
-            field: {label: Column, name: column, widget: markdown}
+            field: {label: Content, name: content, widget: markdown}
   - name: site
     label: Site settings
     files:
