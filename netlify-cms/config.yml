@@ -10,12 +10,10 @@ collections:
     folder: content/project
     create: true
     fields:
-
       - {label: Project name, name: name}
       - {label: Banner, name: banner, widget: image, required: false}
       - {label: Full case study link, name: full_case_study}
       - {label: Intro, name: body, widget: markdown}
-
       - label: "Sections"
         name: "sections"
         widget: "list"
