@@ -13,28 +13,28 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/axios": "^5.5.4",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.5",
+    "nuxt": "^2.8.1",
     "vue-markdown": "^2.2.4",
     "vuetify": "^1.2.4"
   },
   "devDependencies": {
     "@nuxt/common": "^2.3.4",
     "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^8.2.1",
-    "eslint": "^5.0.1",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-vue": "^4.0.0",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-vue": "^5.2.3",
     "front-matter": "^3.0.1",
     "frontmatter-markdown-loader": "^1.6.0",
-    "fs-extra": "^7.0.1",
-    "netlify-cms": "^2.5.0",
+    "fs-extra": "^8.1.0",
+    "netlify-cms": "^2.9.6",
     "node-dir": "^0.1.17",
     "nodemon": "^1.11.0",
     "nuxt-netlify-cms": "^4.0.0",
     "nuxtent": "^1.4.1",
-    "standard": "^12.0.1",
+    "standard": "^13.0.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
   }
